@@ -31,12 +31,24 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+         it('Feed url is defined and is not empty', function() {
+            allFeeds.forEach( feed => {
+                expect(feed.url).toBeDefined();
+                expect(feed.url.length).not.toBe(0);
+            })
+         });
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         it('Feed name is defined and is not empty', function() {
+            allFeeds.forEach( feed => {
+                expect(feed.name).toBeDefined();
+                expect(feed.name.length).not.toBe(0);
+            })
+         });
     });
 
 
@@ -53,6 +65,17 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+    describe('The menu', function() {
+
+        it('Menu is hidden by default', function() {
+
+        });
+
+        it('Menu changes visibility when clicked', function() {
+
+        });
+
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
@@ -62,6 +85,12 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+    describe('Initial Entries', function() {
+
+        it('LoadFeed is called and works properly', function() {
+
+        });
+    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
@@ -69,4 +98,11 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+    describe('New Feed Selection', function(){
+
+        it('Content changes when a new feed loads', function() {
+
+        });
+    });
+
 }());
