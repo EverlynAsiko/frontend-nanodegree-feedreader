@@ -5,16 +5,16 @@ In this project you are given a web-based application that reads RSS feeds. The 
 # What I have done
 
 1. Wrote the RSS feed test suite to check:
-		- that the all feeds array is not empty
-		- that the feeds individual url field is not empty
-		- that the feeds individual name field is not empty
+- that the all feeds array is not empty
+- that the feeds individual url field is not empty
+- that the feeds individual name field is not empty
 
 2. Wrote the menu test suite to check:
-		- that the menu by default is hidden
-		- that the menu toggle being seen when clicked
+- that the menu by default is hidden
+- that the menu toggle being seen when clicked
 
 3. Wrote the initial entry test suite to check:
-		- that the feeds actually load
+- that the feeds actually load
 
 4. Wrote the new feed selection test suite to check:
 		that the new feed selected updates, and is not the same as the first one
