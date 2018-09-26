@@ -8,6 +8,8 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
+
+ //Help gotten from https://udenver.zoom.us/recording/play/-1Agy4wDME0_ab_zaNUiWquZOWdb4qQvCJENURKWT4CDtHWqXrE0yI7DSi8kfvm5?continueMode=true
 $(function() {
     /* This is our first test suite - a test suite just contains
     * a related set of tests. This suite is all about the RSS
@@ -89,9 +91,12 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
     describe('Initial Entries', function() {
+        beforeEach(done => {
+            loadFeed(0,done);
+        });
 
-        it('LoadFeed is called and works properly', function() {
-
+        it('LoadFeed has at least one single entry and works properly', function() {
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
 
@@ -103,8 +108,24 @@ $(function() {
          */
     describe('New Feed Selection', function(){
 
-        it('Content changes when a new feed loads', function() {
+        let feedOne;
+        let feedTwo;
 
+        beforeEach(done => {
+            loadFeed(0, function(){
+                feedOne = $('.feed').html();
+                done(); 
+            });
+
+            loadFeed(0, function(){
+                feedTwo = $('.feed').html();
+                done(); 
+            });
+
+        })
+
+        it('Content changes when a new feed loads', function() {
+            expect(feedOne === feedTwo).toBe(false);
         });
     });
 
